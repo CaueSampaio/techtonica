@@ -7,9 +7,16 @@ const Stack = createNativeStackNavigator();
 
 const Navigation = () => (
   <NavigationContainer>
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}>
       {MainStack.map(screen => (
-        <Stack.Screen component={screen.component} key={`${MainStackName}-${screen.name}`} name={screen.name} />
+        <Stack.Screen
+          component={screen.component}
+          key={`${MainStackName}-${screen.name}`}
+          name={screen.name}
+        />
       ))}
     </Stack.Navigator>
   </NavigationContainer>
